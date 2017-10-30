@@ -13,7 +13,6 @@ Josh Cope */
 
 
 
-
 /* grouped selectors */
 
 div,
@@ -25,7 +24,7 @@ aside,
 section {
     font-family: "Avenir", Helvetica, Arial, sans-serif;
     text-decoration: none;
-    /*	background-color: rgba(0, 100, 255, .2);	
+    /*  background-color: rgba(0, 100, 255, .2);    
 */
 }
 
@@ -116,6 +115,7 @@ p {
 }
 
 
+
 /* use a pseudo class selector to add a block of empty
 content with zero height that clears both sides.
 This helps us fix wrappign issues when floaring. 
@@ -133,9 +133,8 @@ We apply the clear fix to the wrapper/container element. */
 
 
 
-
 /*******************************
-		   Nav Bar
+           Nav Bar
    *******************************/
 
 ul.menu {
@@ -152,12 +151,13 @@ ul.menu {
 
 li {
     /* float: left;
-	would need a clear fix if using float */
+    would need a clear fix if using float */
     /* display: inline
-	let it stack, but does not work with display block */
+    let it stack, but does not work with display block */
     display: inline-block;
     padding: 50px 10px 10px 10px;
 }
+
 
 
 /* only apply to anchor tags within a list item */
@@ -201,17 +201,16 @@ ul.menu li#logo a:hover {
 
 
 
-
 /* =============================================================================
    Page Styles
    ========================================================================== */
 
 
 /*******************************
-		   Projects
+           Projects
 *******************************/
 
-ul.projects {
+nav ul.projects {
     /* hide bullets */
     list-style-type: none;
     padding: 0px;
@@ -223,7 +222,7 @@ ul.projects {
 
 /* only apply to anchor tags within a list item */
 
-ul.projects li a {
+nav ul.projects li a {
     /* anchor tags can be difficult to display inline, 
 here we will tell them to behave like block level elements*/
     display: block;
@@ -237,21 +236,19 @@ here we will tell them to behave like block level elements*/
 }
 
 
-ul.projects li a:hover {
+nav ul.projects li a:hover {
     background-color: red;
 }
 
 
-li a:active {
+nav li a:active {
     background-color: #888;
 }
 
 
 
-
-
 /*******************************
-		Portfolio Blocks
+        Portfolio Blocks
 *******************************/
 
 .view {
@@ -307,7 +304,6 @@ li a:active {
 
 
 
-
 /******** Hover Styles **********/
 
 
@@ -341,11 +337,13 @@ li a:active {
 }
 
 
+
 /* show mask div on hover*/
 
 .view:hover .mask {
     opacity: 1;
 }
+
 
 
 /*scale from 0 to 2, and up the opacity from 0 to 1*/
@@ -356,6 +354,7 @@ li a:active {
     transform: scale(1);
     opacity: 1;
 }
+
 
 
 /*Project*/
@@ -377,7 +376,7 @@ li a:active {
 
 
 /***************************************
-				FRINGE
+                FRINGE
 ***************************************/
 
 .fringefeatured {
@@ -390,15 +389,15 @@ li a:active {
 }
 
 nav.singleProject {
-    /*	width: 80%;
-	margin: 0 auto;*/
+    /*  width: 80%;
+    margin: 0 auto;*/
     background-color: rgba(255, 255, 255, 0.8);
 }
 
 
 
 /***************************************
-		SINGLE PROJECT
+        SINGLE PROJECT
 ***************************************/
 
 main.singleProject {
@@ -409,8 +408,8 @@ main.singleProject {
 
 aside {
     width: 44%;
-    float: left;
     text-align: right;
+    display: inline-block;
     border-right: 1pt solid black;
     padding-right: 5%;
 }
@@ -421,7 +420,7 @@ aside#sidekick {
 
 section {
     width: 45%;
-    float: right;
+    display: inline-block;
     padding-left: 5%;
 }
 
@@ -435,9 +434,8 @@ main.singleProject {
 
 
 
-
 /***************************************
-			Awards
+            Awards
 ***************************************/
 
 .award {
@@ -447,6 +445,7 @@ main.singleProject {
     width: 35px;
     margin-bottom: 20px;
 }
+
 
 
 /* Tooltip text */
@@ -465,6 +464,7 @@ main.singleProject {
     position: absolute;
     z-index: 1;
 }
+
 
 
 /* Show the tooltip text when you mouse over the tooltip container */
@@ -502,9 +502,10 @@ article.center img {
     padding: 25px 0;
 }
 
-
-
-
+iframe {
+    width: 100%;
+    height: auto;
+}
 
 
 /*Pop Up*/
@@ -575,7 +576,6 @@ article.center img {
 
 
 
-
 /* =============================================================================
    Media Queries
    ========================================================================== */
@@ -586,16 +586,47 @@ article.center img {
 @media only screen and (min-width: 768px) and (max-width: 995px) {}
 
 
+
 /* All Mobile Sizes */
 
 @media only screen and (max-width: 767px) {
-    .box {
-        width: 70%;
+    nav ul.projects {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        padding: 5px 0;
+        width: 80%;
     }
-    .popup {
-        width: 70%;
+
+    nav ul.projects li {
+        padding: 5px 0;
     }
+
+    main.singleProject {
+        display: inline-block;
+        width: 80%;
+        margin: 0 75px;
+    }
+
+    section {
+        width: 80%;
+        padding: 10px 0;
+        float: none;
+        margin: 0 auto;
+        border: none;
+    }
+
+    aside {
+        width: 80%;
+        padding: 10px 0;
+        margin: 0 auto;
+        text-align: left;
+        border: none;
+    }
+
 }
+
+
 
 
 /* Mobile Landscape Size to Tablet Portrait */
@@ -604,10 +635,12 @@ article.center img {
     .box {
         width: 70%;
     }
+
     .popup {
         width: 70%;
     }
 }
+
 
 
 /* Mobile Portrait Size to Mobile Landscape Size */
@@ -616,6 +649,7 @@ article.center img {
     .box {
         width: 70%;
     }
+
     .popup {
         width: 70%;
     }
