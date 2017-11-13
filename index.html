@@ -27,20 +27,36 @@
             <nav>
     </header>
     <main>
-        <nav>
+        <nav class="desktop">
             <ul class="projects">
-                <li><a href="#">All</a></li>
-                <li><a href="Pages/Grids/Publication.html">Publications</a></li>
-                <li><a href="#">Branding</a></li>
-                <li><a href="#">Marketing</a></li>
-                <li><a href="#">Infographics</a></li>
-                <li><a href="#">Web Design</a></li>
-                <li><a href="#">For Fun</a></li>
+                <li><a onclick="filterSelection('all')" name="category" class="move">All</a></li>
+                <li><a onclick="filterSelection('publication')" name="category" class="move">Publications</a></li>
+                <li><a onclick="filterSelection('branding')" name="category" class="move">Branding</a></li>
+                <li><a onclick="filterSelection('marketing')" name="category" class="move">Marketing</a></li>
+                <li><a onclick="filterSelection('infographic')" name="category" class="move">Infographics</a></li>
+                <li><a onclick="filterSelection('web')" name="category" class="move">Web Design</a></li>
+                <li><a onclick="filterSelection('4fun')" name="category" class="move">For Fun</a></li>
             </ul>
         </nav>
         <article>
+            <button class="hamburger">&#9776;</button>
+            <button class="cross">&#735;</button>
+            <div class="mobile">
+                <nav>
+                    <ul class="projects-mobile">
+                        <li><a onclick="filterSelection('all')" name="category" class="move">All</a></li>
+                        <li><a onclick="filterSelection('publication')" name="category" class="move">Publications</a></li>
+                        <li><a onclick="filterSelection('branding')" name="category" class="move">Branding</a></li>
+                        <li><a onclick="filterSelection('marketing')" name="category" class="move">Marketing</a></li>
+                        <li><a onclick="filterSelection('infographic')" name="category" class="move">Infographics</a></li>
+                        <li><a onclick="filterSelection('web')" name="category" class="move">Web Design</a></li>
+                        <li><a onclick="filterSelection('4fun')" name="category" class="move">For Fun</a></li>
+                    </ul>
+                </nav>
+            </div>
+            </header>
             <div class="container clearfix content">
-                <div class="grid_3">
+                <div class="grid_3 filterDiv all publication">
                     <a href="Pages/Fringe.html">
                         <div class="view">
                             <img src="Photos/Fringe.jpg" alt="Fringe Magazine">
@@ -52,7 +68,7 @@
                     </a>
                     </div>
                 </div>
-                <div class="grid_3">
+                <div class="grid_3 filterDiv all publication">
                     <a href="Pages/WSN.html">
                         <div class="view">
                             <img src="Photos/WSN.jpg" alt="Washington Square News">
@@ -64,7 +80,7 @@
                     </a>
                     </div>
                 </div>
-                <div class="grid_3">
+                <div class="grid_3 filterDiv all infographic web">
                     <a href="Pages/CSM.html">
                         <div class="view">
                             <img src="Photos/CSM.jpg" alt="Coppell Student Media">
@@ -76,7 +92,7 @@
                     </a>
                     </div>
                 </div>
-                <div class="grid_3">
+                <div class="grid_3 filterDiv all publication">
                     <a href="Pages/Sidekick.html">
                         <div class="view">
                             <img src="Photos/Sidekick.jpg" alt="The Sidekick Newspaper">
@@ -89,7 +105,7 @@
                     </div>
                 </div>
                 <!-- end row one -->
-                <div class="grid_3">
+                <div class="grid_3 filterDiv all marketing branding">
                     <a href="Pages/Strawberry.html">
                         <div class="view">
                             <img src="Photos/Strawberry.jpg" alt="NYU Strawberry Festival">
@@ -101,7 +117,7 @@
                     </a>
                     </div>
                 </div>
-                <div class="grid_3">
+                <div class="grid_3 filterDiv all publication marketing">
                     <a href="Pages/Coppell.html">
                         <div class="view">
                             <img src="Photos/Coppell.jpg" alt="City of Coppell Welcome Book">
@@ -112,7 +128,7 @@
                             </div>
                         </div>
                 </div>
-                <div class="grid_3">
+                <div class="grid_3 filterDiv all branding marketing">
                     <a href="Pages/Inspire.html">
                         <div class="view">
                             <img src="Photos/Inspire.jpg" alt="Inspire Dance Stuio">
@@ -124,7 +140,7 @@
                     </a>
                     </div>
                 </div>
-                <div class="grid_3">
+                <div class="grid_3 filterDiv all marketing">
                     <a href="Pages/Mosaic.html">
                         <div class="view">
                             <img src="Photos/Mosaic.jpg" alt="Mosaic Talent">
@@ -137,7 +153,7 @@
                     </div>
                 </div>
                 <!-- end row two -->
-                <div class="grid_3">
+                <div class="grid_3 filterDiv all marketing branding">
                     <a href="Pages/ERB.html">
                         <div class="view">
                             <img src="Photos/ERB.jpg" alt="ERB Maximized Living">
@@ -149,7 +165,7 @@
                     </a>
                     </div>
                 </div>
-                <div class="grid_3">
+                <div class="grid_3 filterDiv all 4fun">
                     <a href="Pages/Skin.html">
                         <div class="view">
                             <img src="Photos/Skin.jpg" alt="Skin">
@@ -160,7 +176,7 @@
                             </div>
                         </div>
                 </div>
-                <div class="grid_3">
+                <div class="grid_3 filterDiv all 4fun">
                     <a href="Pages/Speedy.html">
                         <div class="view">
                             <img src="Photos/Speedy.jpg" alt="Speedy Painting">
@@ -172,7 +188,7 @@
                     </a>
                     </div>
                 </div>
-                <div class="grid_3">
+                <div class="grid_3 filterDiv all 4fun">
                     <a href="Pages/Sad.html">
                         <div class="view">
                             <img src="Photos/Sad.jpg" alt="Sad">

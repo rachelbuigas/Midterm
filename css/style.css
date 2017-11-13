@@ -13,6 +13,9 @@ Josh Cope */
 
 
 
+
+
+
 /* grouped selectors */
 
 div,
@@ -27,6 +30,9 @@ section {
     /*  background-color: rgba(0, 100, 255, .2);    
 */
 }
+
+
+
 
 
 
@@ -116,6 +122,9 @@ p {
 
 
 
+
+
+
 /* use a pseudo class selector to add a block of empty
 content with zero height that clears both sides.
 This helps us fix wrappign issues when floaring. 
@@ -130,6 +139,9 @@ We apply the clear fix to the wrapper/container element. */
     font-size: 0;
     visibility: hidden;
 }
+
+
+
 
 
 
@@ -157,6 +169,9 @@ li {
     display: inline-block;
     padding: 50px 10px 10px 10px;
 }
+
+
+
 
 
 
@@ -200,6 +215,17 @@ ul.menu li#logo a:hover {
 }
 
 
+
+.hamburger,
+.cross,
+.mobile {
+    display: none;
+}
+
+
+
+
+
 /* =============================================================================
    Page Styles
    ========================================================================== */
@@ -216,6 +242,9 @@ nav ul.projects {
     display: flex;
     justify-content: space-around;
 }
+
+
+
 
 
 
@@ -243,6 +272,22 @@ nav ul.projects li a:hover {
 nav li a:active {
     background-color: #888;
 }
+
+
+.filterDiv {
+    display: none;
+    transition: transform 0.4s;
+}
+
+.filterDiv.is-moved {
+    transform: translateX(145px);
+}
+
+.show {
+    display: block;
+}
+
+
 
 
 
@@ -303,6 +348,9 @@ nav li a:active {
 
 
 
+
+
+
 /******** Hover Styles **********/
 
 
@@ -337,11 +385,17 @@ nav li a:active {
 
 
 
+
+
+
 /* show mask div on hover*/
 
 .view:hover .mask {
     opacity: 1;
 }
+
+
+
 
 
 
@@ -353,6 +407,9 @@ nav li a:active {
     transform: scale(1);
     opacity: 1;
 }
+
+
+
 
 
 
@@ -374,6 +431,9 @@ nav li a:active {
 
 
 
+
+
+
 /***************************************
                 FRINGE
 ***************************************/
@@ -392,6 +452,9 @@ nav.singleProject {
     margin: 0 auto;*/
     background-color: rgba(255, 255, 255, 0.8);
 }
+
+
+
 
 
 
@@ -433,6 +496,9 @@ main.singleProject {
 
 
 
+
+
+
 /***************************************
             Awards
 ***************************************/
@@ -444,6 +510,9 @@ main.singleProject {
     width: 35px;
     margin-bottom: 20px;
 }
+
+
+
 
 
 
@@ -463,6 +532,9 @@ main.singleProject {
     position: absolute;
     z-index: 1;
 }
+
+
+
 
 
 
@@ -505,6 +577,9 @@ iframe {
     width: 100%;
     height: auto;
 }
+
+
+
 
 
 /*Pop Up*/
@@ -575,6 +650,9 @@ iframe {
 
 
 
+
+
+
 /* =============================================================================
    Media Queries
    ========================================================================== */
@@ -584,12 +662,21 @@ iframe {
 
 @media only screen and (min-width: 768px) and (max-width: 995px) {}
 
+.hamburger,
+.cross,
+.mobile {
+    display: none;
+}
+
+
+
+
 
 
 /* All Mobile Sizes */
 
 @media only screen and (max-width: 767px) {
-    nav ul.projects {
+    nav ul.projects-mobile {
         display: flex;
         width: 100%;
         flex-direction: column;
@@ -597,7 +684,7 @@ iframe {
         width: 80%;
     }
 
-    nav ul.projects li {
+    nav ul.projects-mobile li {
         padding: 5px 0;
     }
 
@@ -623,7 +710,68 @@ iframe {
         border: none;
     }
 
+
+    /* HAMBURGER MENU*/
+    .hamburger {
+        display: block;
+        background: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        line-height: 45px;
+        padding: 5px 15px 0px 15px;
+        color: #999;
+        border: 0;
+        font-size: 1.4em;
+        font-weight: bold;
+        cursor: pointer;
+        outline: none;
+        z-index: 10000000000000;
+    }
+    .cross {
+        display: block;
+        background: none;
+        position: absolute;
+        top: 0px;
+        right: 0;
+        padding: 7px 15px 0px 15px;
+        color: #999;
+        border: 0;
+        font-size: 3em;
+        line-height: 65px;
+        font-weight: bold;
+        cursor: pointer;
+        outline: none;
+        z-index: 10000000000000;
+    }
+
+
+    .desktop {
+        display: none;
+    }
+
+    nav {
+        display: flex;
+        justify-content: center;
+    }
+    nav ul.projects-mobile li {
+        overflow: none;
+    }
+
+    nav ul.projects-mobile li a {
+        display: block;
+        text-align: center;
+        width: 100%;
+        padding: 5px;
+        text-decoration: none;
+        background-color: #111;
+        color: #fff;
+        border-radius: 20px;
+    }
 }
+
+
+
 
 
 
@@ -642,6 +790,9 @@ iframe {
 
 
 
+
+
+
 /* Mobile Portrait Size to Mobile Landscape Size */
 
 @media only screen and (max-width: 479px) {
@@ -653,6 +804,9 @@ iframe {
         width: 70%;
     }
 }
+
+
+
 
 
 
